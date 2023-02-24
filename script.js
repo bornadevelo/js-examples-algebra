@@ -1,41 +1,22 @@
-import Lottery from "./modules/lottery.js";
-import { politicians } from "./data/data.js";
+// Imports
+import { lectures } from "./data/data.js";
+import { renderItems } from "./modules/htmlRenderer.js";
+// Variables
+const inputSearchEl = document.querySelector(".search-input");
 
-const buttonStartLotteryEl = document.querySelector(".button-start-lottery");
-const lottteryResultsEl = document.querySelector(".lottery-results");
-const winningCombinationEl = document.querySelector(".winning-combination");
-const winningMessageEl = document.querySelector(".winners-message");
-const winnersEl = document.querySelector(".winners");
+// Functions that are executed on body load
+renderItems(lectures);
 
-const lottery = new Lottery(politicians);
+// Event listeners
+inputSearchEl.addEventListener("keyup", (event) => {
+  const searchTerm = event.target.value;
 
-buttonStartLotteryEl.addEventListener("click", function () {
-  buttonStartLotteryEl.disabled = true;
-  buttonStartLotteryEl.innerText = "Lottery drawing in progress...";
-  lottteryResultsEl.style.display = "none";
+  const filteredResults = lectures.filter((lecture) =>
+    lecture.lectureName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-  lottery
-    .startDrawing()
-    .then((result) => {
-      winnersEl.display = "block";
-      winningCombinationEl.innerText = `Winning combination was: ${result.winningCombination}`;
-      winningMessageEl.innerText = "Winners:";
-
-      let winnersList = "";
-      result.winners.forEach(
-        (winner) => (winnersList += `<li>${winner.getPlayerDetails()}</li>`)
-      );
-
-      winnersEl.innerHTML = winnersList;
-    })
-    .catch((result) => {
-      winnersEl.display = "none";
-      winningCombinationEl.innerHTML = `Winning combination was: ${result.winningCombination}`;
-      winningMessageEl.innerHTML = "There are no winners!";
-    })
-    .finally(() => {
-      buttonStartLotteryEl.disabled = false;
-      buttonStartLotteryEl.innerText = "Start lottery drawing";
-      lottteryResultsEl.style.display = "block";
-    });
+  renderItems(
+    filteredResults,
+    "There are no lessons according to the entered term"
+  );
 });

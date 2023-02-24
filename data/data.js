@@ -1,69 +1,34 @@
-export const politicians = [
+export const lectures = [
   {
-    name: "Stjepan",
-    surname: "Mesić",
+    lectureName: "HTML",
+    lectureLength: 90,
   },
   {
-    name: "Ivo",
-    surname: "Sanader",
+    lectureName: "CSS",
+    lectureLength: 120,
   },
   {
-    name: "Zoran",
-    surname: "Milanović",
+    lectureName: "JavaScript",
+    lectureLength: 90,
   },
   {
-    name: "Ljubo",
-    surname: "Ćesić Rojs",
+    lectureName: "GIT",
+    lectureLength: 80,
   },
   {
-    name: "Marko",
-    surname: "Vešligaj",
+    lectureName: "React",
+    lectureLength: 10,
   },
   {
-    name: "Željko",
-    surname: "Kerum",
+    lectureName: "Next.js",
+    lectureLength: 190,
   },
   {
-    name: "Vladimir",
-    surname: "Šeks",
+    lectureName: "PHP",
+    lectureLength: 190,
   },
   {
-    name: "Anto",
-    surname: "Đapić",
-  },
-  {
-    name: "Anka",
-    surname: "Mrak Taritaš",
-  },
-  {
-    name: "George",
-    surname: "Bush",
-  },
-  {
-    name: "Ivica",
-    surname: "King Šarić",
-  },
-];
-
-export const folk = [
-  {
-    name: "Đuro",
-    surname: "Đurić",
-  },
-  {
-    name: "Petar",
-    surname: "Perić",
-  },
-  {
-    name: "Ivica",
-    surname: "Ivić",
-  },
-  {
-    name: "Matija",
-    surname: "Majić",
-  },
-  {
-    name: "Jozo",
-    surname: "Marić",
+    lectureName: "Tin.java.js",
+    lectureLength: 190,
   },
 ];
