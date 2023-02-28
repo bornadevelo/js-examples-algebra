@@ -4,17 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Search App</title>
+    <title>Polaznici App</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js"></script>
   </head>
   <body>
     <main>
       <section class="section">
-        <h1 class="section__title">Search App</h1>
-        <input type="text" class="search-input" />
+        <h1 class="section__title">Polaznici</h1>
+        <div class="section__heading">
+          <input type="text" class="search-input" />
+          <select name="order" class="select">
+            <option value="">Default order</option>
+            <option value="age_ascending">Age ascending</option>
+            <option value="age_descending">Age descending</option>
+          </select>
+        </div>
         <p class="alert"></p>
-        <div class="grid"></div>
+        <table class="table">
+          <thead class="table__head">
+            <tr class="table__row">
+              <th class="table__heading">ID</th>
+              <th class="table__heading">Name</th>
+              <th class="table__heading">Surname</th>
+              <th class="table__heading">Age</th>
+            </tr>
+          </thead>
+          <tbody class="table__body"></tbody>
+        </table>
       </section>
     </main>
   </body>
